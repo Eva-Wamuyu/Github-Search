@@ -1,8 +1,53 @@
 <div class="container">
-  <form #userForm="ngForm" (ngSubmit)="userFind(userForm)">
+  <form #userForm="ngForm" (ngSubmit)="repoGet(use)"(ngSubmit)="userFind(use) ">
     <label class="" for="">Search User</label>
     <input type="text" [(ngModel)]="use" name="use" id="" class="form-control" required>
   <button type="submit">Search</button>
   </form>
   </div>
+
+  <div>
+    <p>
+      Search Results For: {{use}}
+    </p>
+    <div>
+      <h2>{{gitUser.login}}</h2>
+      <img src="{{gitUser.avatar_url}}" alt="{{gitUser.login}}photo" width="300px">
+      <p>
+        Followers: {{gitUser.followers}}
+      </p>
+      <p>
+        Following: {{gitUser.following}}
+      </p>
+      <p>
+        <a href="{{gitUser.html_url}}" class="btn" target="_blank">View Github</a>
+      </p>
+  
+      <p>
+        Total Repositories: {{gitUser.public_repos}}
+      </p>
+    
+    </div>
+  </div>
+
+  <div class="container">
+    <h3> Repositories </h3>
+   
+    <div class="row">
+      <div class="col-md-4" *ngFor="let repo of usersRepo">
+        <h4>
+          {{repo.name}}
+        </h4>
+
+
+    
+           
+
+
+      </div>
+    </div>
+
+  </div>
+
+ 
 

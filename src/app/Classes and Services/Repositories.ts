@@ -1,29 +1,31 @@
 export class Repository implements RepositoryInterface{
-  private!: false
+    
     html_url!: string
     description!: string
-    git_url!: string
-    stargazers_url!: string
+    language!: string
+    name!: string
     forks_count!: number
-    stargazers_count!: number
+    created_at!: Date;
     watchers_count!: number
     default_branch!: string
 
   constructor( 
-    // private: false, 
+    
     html_url: string,
     description: string,
-    git_url: string,
+    language: string,
+    name: string,
     forks_count: number,
-    stargazers_count: number,
+    created_at: Date,
     watchers_count: number,
     default_branch: string) {
 
       this.html_url = html_url;
       this.description = description;
-      this.git_url = git_url;
+      this.language =  language;
+      this.name = name;
       this.forks_count = forks_count;
-      this.stargazers_count;
+      this.created_at = created_at;
       this.watchers_count = watchers_count;
       this.default_branch = default_branch;
 
@@ -35,12 +37,13 @@ export class Repository implements RepositoryInterface{
 
 interface RepositoryInterface{
 
-    //  private: false,
+    
     html_url: string,
     description: string,
-    git_url: string,
+    name: string,
+    language: string;
     forks_count: number,
-    stargazers_count: number,
+    created_at: Date;
     watchers_count: number,
     default_branch: string,
    

@@ -17,30 +17,54 @@ export class RequestService{
 
 
 
-  G_URL = "https://api.github.com/";
+  key = environment.devKey;
+
+  G_URL = "https://api.github.com/users";
+  gitUser = new User("","",0,0,"","",0,"");
   
   // TEST_URL = "https://api.github.com/users/Eva-Wamuyu";
 
   constructor(private http: HttpClient){}
 
-  searchUser(userName:string):Observable<UserInterface[]>{
+  searchUser(userName:string):Observable<any>{
     
         
-    return this.http.get<UserInterface[]>(this.G_URL+'users/'+userName);
+    return this.http.get<User>(this.G_URL+'/'+userName);
 
   }
-  getUserRepo(userName:string):Observable<Repository[]>{
-    return this.http.get<Repository[]>(this.G_URL+'users/'+userName+'/repos?order=created&sort=asc?-access_token='+environment.devKey);
+  getUserRepo(userName:string):Observable<any>{
+
+    return this.http
+    .get<HttpClient>(
+     this.G_URL +
+        '/' +
+        userName +
+        '/repos?sort=created&direction=asc?access_token=' +
+        environment.devKey
+    )
+    // return this.http.get<Repository>(this.G_URL+'users/'+userName);
   }
 
-  searchRepo(repoName:string):Observable<Repository[]>{
+  searchRepo(repoName:string):Observable<any>{
 
-    return this.http.get<Repository[]>(this.G_URL+repoName);
+    return this.http.get<Repository>(this.G_URL+"search/repositories?"+repoName);
   }
 
+  
 
 
 
+  // searchPerson(user:any){
+  //   this.http.get<User>(this.G_URL+"users/"+user).subscribe(
+  //     (data:any) =>{
+  //       this.gitUser = new User(data.login, data.name, data.followers, data.following, data.avatar_url, data.repos_url, data.public_repos, data.html_url);
+  //       console.log(data);
+  //     }
+  //   );
+  // }
+
+
+  // 
   // searchUser(userName:string){
 
     
@@ -48,10 +72,12 @@ export class RequestService{
 
   // }
 
+  // +'repos/-access_token='+environment.devKey
+
   
-getMe(){
-  this.http.get(this.G_URL+"/users");
-}
+// getMe(){
+//   this.http.get(this.G_URL+"/users");
+// }
 
 
 }

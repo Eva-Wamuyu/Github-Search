@@ -6,9 +6,9 @@
 }
 .btns{
  
+  background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
   border: none;
-  box-shadow: -3px -3px 7px #ffffff73,
-  2px 2px 5px rgba(94, 104, 121, 0.288);
+ 
   box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
   /* border-radius: 50%; */
 }
@@ -23,5 +23,10 @@
 
 }
 	
+.btn{
+  background-image: linear-gradient(-180deg,#f0f3f6,#e6ebf1 90%);
+  box-shadow: -3px -3px 7px #ffffff73,
+  2px 2px 5px rgba(94, 104, 121, 0.288);
+}
 
 

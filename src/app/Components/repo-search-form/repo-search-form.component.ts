@@ -10,7 +10,10 @@ import { RequestService } from 'src/app/Classes and Services/requestService';
 })
 export class RepoSearchFormComponent implements OnInit {
 
-  repository: Repository[] = []
+  repository = new Repository("","","","",0,new Date(),0,"");
+
+  repositories = [];
+  // repos = [];
   repoToFind!: string;
 
   constructor(private requestSvs: RequestService) { }
@@ -25,11 +28,15 @@ export class RepoSearchFormComponent implements OnInit {
 
     this.requestSvs.searchRepo(repoToFind).subscribe(
       (data)=>{
-        this.repository = data;
         
+        this.repositories = data;
+        console.log(data);
+        
+      },
+      err=>{
+        console.log("Err");
+        alert("Not Found");
       }
     )
-
-    
   }
 }

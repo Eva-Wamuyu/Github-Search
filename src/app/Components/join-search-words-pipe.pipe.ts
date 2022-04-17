@@ -1,12 +1,15 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
+
 @Pipe({
-  name: 'joinSearchWordsPipe'
+  name: 'joinWord'
 })
 export class JoinSearchWordsPipePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: any,): string {
+
+   let joinedString =  value.join("");
+    return joinedString;
   }
 
 }

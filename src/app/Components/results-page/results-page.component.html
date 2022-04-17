@@ -1,5 +1,5 @@
-<div>
-  
+<div class="container">
+
 
   <h2>{{wamuyu.name}}</h2>
   <img src="{{wamuyu.avatar_url}}" alt="{{wamuyu.login}}avatar" width="300px">
@@ -10,4 +10,35 @@
 
 
   <a href="{{wamuyu.html_url}}" target="_blank">View Github</a>
+</div>
+
+<div class="container">
+  <h3> Repositories </h3>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-4" *ngFor="let repo of wamuRepos">
+      <h4>{{repo.name}}</h4>
+      <p>
+        Forks: {{repo.forks_count}}
+      </p>
+      <p>
+        Default Branch: {{repo.default_branch}}
+      </p>
+      <p>
+         Date Created: {{repo.created_at|date}}
+      </p>
+      <p>
+        Main Language: {{repo.language}}
+      </p>
+      <p>
+        Description: {{repo.description}}
+      </p>
+      <p>
+        Watchers: {{repo.watchers_count}}
+      </p>
+
+      <a class="btn" href="{{repo.html_url}}" target="_blank">View In GitHub </a>
+    </div>
+  </div>
+
 </div>
