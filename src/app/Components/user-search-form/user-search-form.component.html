@@ -2,7 +2,7 @@
   <form #userForm="ngForm" (ngSubmit)="userFind(use)" class="form">
     <div class="form-group">
     <label class="" for="">Search User</label>
-    <input type="text" [(ngModel)]="use" name="use" id="" class="form-control" required>
+    <input type="text" [(ngModel)]="use" name="use" id="" class="form-control" required placeholder="Search For a User">
     </div>
     <div class="form-group">
   <button class="form-control btns mt-2" type="submit">Search</button>
@@ -20,8 +20,7 @@
       <img src="{{gitUser.avatar_url}}" alt="{{gitUser.login}}photo" width="300px">
       <p>
         Followers: {{gitUser.followers}}
-      </p>
-      <p>
+     
         Following: {{gitUser.following}}
       </p>
       <p>
@@ -35,11 +34,12 @@
     </div>
   </div>
 
+<div class="container">
+  <h3> Repositories </h3>
+</div>
   <div class="container">
-    <h3> Repositories </h3>
-   
     <div class="row">
-      <div class="col-md-4" *ngFor="let repo of usersRepo">
+      <div class="col-md-3" *ngFor="let repo of usersRepo">
         <h4>{{repo.name}}</h4>
         <p>
           Forks: {{repo.forks_count}}

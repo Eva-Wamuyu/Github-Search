@@ -57,7 +57,7 @@ export class UserSearchFormComponent implements OnInit {
         this.repository = new Repository(data.html_url, data.description, data.language, data.name, data.forks_count, data.created_at, data.watchers_count, data.default_branch);
         this.usersRepo  = data;
         
-        console.log(this.usersRepo);
+        // console.log(this.usersRepo);
         
       }
     ), (err:any) => {
