@@ -13,6 +13,7 @@ import { RepoSearchFormComponent } from './Components/repo-search-form/repo-sear
 import { ResultsPageComponent } from './Components/results-page/results-page.component';
 import { OopsNotFoundComponent } from './Components/oops-not-found/oops-not-found.component';
 import { UserRepositoriesComponent } from './Components/user-repositories/user-repositories.component';
+import { TruncatePipe } from './Classes and Services/truncate.pipe';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { UserRepositoriesComponent } from './Components/user-repositories/user-r
     ResultsPageComponent,
     OopsNotFoundComponent,
     UserRepositoriesComponent,
+    TruncatePipe,
     
   ],
   imports: [
