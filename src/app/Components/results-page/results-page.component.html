@@ -1,22 +1,28 @@
 <div class="container">
-
-
   <h2>{{wamuyu.name}}</h2>
-  <img src="{{wamuyu.avatar_url}}" alt="{{wamuyu.login}}avatar" width="300px">
-
-  <p>Followers: {{wamuyu.followers}}</p>
-  <p>Following: {{wamuyu.following}}</p>
-  <p>Public Repositories: {{wamuyu.public_repos}}</p>
-
-
-  <a href="{{wamuyu.html_url}}" target="_blank">View Github</a>
+  <div class="row">
+    <div class="col-sm-12 col-md-6">
+      <img src="{{wamuyu.avatar_url}}" alt="{{wamuyu.login}}avatar" width="300px">
+      <p>{{wamuyu.login}}</p>
+      <p>{{wamuyu.name}}</p>
+    </div>
+    <div class="col-sm-12 col-md-6 p-3">
+      <p>Followers: {{wamuyu.followers}}</p>
+      <p>Following: {{wamuyu.following}}</p>
+      <p>Public Repositories: {{wamuyu.public_repos}}</p>
+      
+     <a href="{{wamuyu.html_url}}" class="btn" target="_blank">View Github</a>
+    </div>
+  </div>
 </div>
 
 <div class="container">
-  <h3> Repositories </h3>
-
+<h3> Repositories </h3>
+<hr>
+</div>
+<div class="container col-flex">
   <div class="row">
-    <div class="col-sm-12 col-md-4" *ngFor="let repo of wamuRepos">
+    <div class="col-sm-12 col-md-3 py-2 me-1 my-2" *ngFor="let repo of wamuRepos">
       <h4>{{repo.name}}</h4>
       <p>
         Forks: {{repo.forks_count}}

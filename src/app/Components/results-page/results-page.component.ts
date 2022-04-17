@@ -44,9 +44,7 @@ export class ResultsPageComponent implements OnInit {
     this.httpreq.getUserRepo('Eva-Wamuyu').subscribe(
       (data)=>{
         this.wamuRepos = data;
-        console.log(this.wamuRepos);
-
-        console.log(this.wamuRepos)
+        
         return this.wamuRepos;
       }
     ), (err:any) => {
@@ -55,16 +53,7 @@ export class ResultsPageComponent implements OnInit {
     }
   }
 
-  // repoGet(){
-  //     this.http.get<Repository>(this.httpreq.G_URL+"users/Eva-Wamuyu/repos?order=created&sort=asc?-access_token="+environment.devKey).subscribe(
-  //       data=>{
-  //         for(let i=0; i<this.wamuRepos.length; i++)
-  //         this.wamuRepo = new Repository(data.html_url, data.description, data.git_url, data.forks_count, data.stargazers_count, data.watchers_count, data.default_branch);
-         
-          
-  //       }
-  //     )
-  //   }
+
 
   
 
@@ -72,15 +61,5 @@ export class ResultsPageComponent implements OnInit {
 
 }
 
-  // userGet(){
-  //   this.http.get<User>(this.httpreq.G_URL+"users/Eva-Wamuyu").subscribe(
-  //     data =>{
-  //       this.wamuyu = new User(data.login, data.name, data.followers, data.following, data.avatar_url, data.repos_url, data.public_repos, data.html_url);
-  //       console.log(data)
-  //     },
-  //   )
-    
-
-  // }
 
   

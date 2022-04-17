@@ -1,8 +1,8 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Repository } from 'src/app/Classes and Services/Repositories';
 import { RequestService } from 'src/app/Classes and Services/requestService';
-import { User, UserInterface } from 'src/app/Classes and Services/Users';
+import { User} from 'src/app/Classes and Services/Users';
 
 
 @Component({
@@ -12,10 +12,11 @@ import { User, UserInterface } from 'src/app/Classes and Services/Users';
 })
 export class UserSearchFormComponent implements OnInit {
 
- 
+
+  seeDetails = false;
   user: User[] = [];
   use = '';
-  usersRepo: UserInterface[] = [];
+  usersRepo: Repository[] = [];
   gitUser = new User("","",0,0,"","",0,"");
   repository = new Repository("","","","",0,new Date(),0,"");
 
@@ -35,6 +36,8 @@ export class UserSearchFormComponent implements OnInit {
   
       return;
     }
+    this.seeDetails = true;
+    this.repoGet(user);
     this.requestSvs.searchUser(user).subscribe(
       (data:any) =>{
         this.gitUser = new User(data.login, data.name, data.followers, data.following, data.avatar_url, data.repos_url, data.public_repos, data.html_url);

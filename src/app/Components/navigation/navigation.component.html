@@ -1,10 +1,12 @@
-<div class="container-fluid center-div d-flex e-height">
-  <div class="" >
-  <a class="ms-2"routerLink="/">Home</a>
+<div class="container-fluid center-div d-flex e-height text-center">
+
+
+  <div class="nav">
+  <a class="ms-2"routerLink="/home">Home</a>
+  <a class="border" [routerLinkActive]="'text-info'"></a>
+  <a class="me-2" [routerLinkActive]="col" routerLink="/UserLens">Explore Users</a>
   <a class="border"></a>
-  <a class="me-2" routerLink="/UserLens">Search A User</a>
-  <a class="border"></a>
-  <a class="ms-2"routerLink="/RepoLens">Search A Repository</a>
+  <a class="ms-2"routerLink="/RepoLens" [routerLinkActive]="col">Explore Repositories</a>
   </div>
 </div>
 

@@ -1,12 +1,17 @@
 <div class="container">
-  <form #userForm="ngForm" (ngSubmit)="repoGet(use)"(ngSubmit)="userFind(use) ">
+  <form #userForm="ngForm" (ngSubmit)="userFind(use)" class="form">
+    <div class="form-group">
     <label class="" for="">Search User</label>
     <input type="text" [(ngModel)]="use" name="use" id="" class="form-control" required>
-  <button type="submit">Search</button>
+    </div>
+    <div class="form-group">
+  <button class="form-control btns mt-2" type="submit">Search</button>
+  </div>
   </form>
   </div>
 
-  <div>
+  <div class="container-fluid" *ngIf="seeDetails">
+  <div class="container-fluid" >
     <p>
       Search Results For: {{use}}
     </p>
@@ -35,19 +40,29 @@
    
     <div class="row">
       <div class="col-md-4" *ngFor="let repo of usersRepo">
-        <h4>
-          {{repo.name}}
-        </h4>
-
-
-    
-           
-
+        <h4>{{repo.name}}</h4>
+        <p>
+          Forks: {{repo.forks_count}}
+        </p>
+        <p>
+          Default Branch: {{repo.default_branch}}
+        </p>
+        <p>
+           Date Created: {{repo.created_at|date}}
+        </p>
+        <p>
+          Main Language: {{repo.language}}
+        </p>
+        <p>
+          Description: {{repo.description}}
+        </p>
+        <p>
+          Watchers: {{repo.watchers_count}}
+        </p>
+  
+        <a class="btn" href="{{repo.html_url}}" target="_blank">View In GitHub </a>
 
       </div>
     </div>
-
   </div>
-
- 
-
+ </div>

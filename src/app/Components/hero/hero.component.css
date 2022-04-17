@@ -1,0 +1,17 @@
+.wrapper{
+  height: 250px;
+  width: 250px;
+  margin: auto;
+  border-radius: 50%;
+  align-items: center;
+  display: grid;
+  place-items: center;
+  box-shadow: 2px 22px 44px #bebebe, -22px -22px 44px #ffffff;
+  background-color: #e0e0e0;
+  
+ 
+  
+  
+}
+
+

@@ -11,7 +11,7 @@ import { RequestService } from 'src/app/Classes and Services/requestService';
 export class RepoSearchFormComponent implements OnInit {
 
   repository = new Repository("","","","",0,new Date(),0,"");
-
+  seeDetails = false;
   repositories = [];
   // repos = [];
   repoToFind!: string;
@@ -23,9 +23,11 @@ export class RepoSearchFormComponent implements OnInit {
 
   repoFind(repoToFind:string){
 
-    
-    console.log(repoToFind)
+    if(repoToFind == ''){
+      return;
+    }
 
+    this.seeDetails = true;
     this.requestSvs.searchRepo(repoToFind).subscribe(
       (data)=>{
         
