@@ -38,23 +38,25 @@
   <h3> Repositories </h3>
 </div>
   <div class="container">
-    <div class="row">
+    <div class="row justify-content-around">
       <div class="col-md-3" *ngFor="let repo of usersRepo">
         <h4>{{repo.name}}</h4>
         <p>
-          Forks: {{repo.forks_count}}
+          Date Created: {{repo.created_at|date}}
+          
         </p>
         <p>
           Default Branch: {{repo.default_branch}}
         </p>
         <p>
-           Date Created: {{repo.created_at|date}}
-        </p>
-        <p>
           Main Language: {{repo.language}}
+         
         </p>
         <p>
-          Description: {{repo.description}}
+          Forks: {{repo.forks_count}}
+        </p>
+        <p>
+          Description: {{repo.description|truncate}}
         </p>
         <p>
           Watchers: {{repo.watchers_count}}
