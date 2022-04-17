@@ -1,0 +1,11 @@
+.e-height{
+  height: 15vh;
+  background-color: #e8eaea;
+  
+}
+.center-div{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}

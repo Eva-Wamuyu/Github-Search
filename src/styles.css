@@ -1,1 +1,27 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.btns{
+ 
+  border: none;
+  box-shadow: -3px -3px 7px #ffffff73,
+  2px 2px 5px rgba(94, 104, 121, 0.288);
+  box-shadow: 5px 5px 10px rgba(163, 177, 198, 0.6), -5px -5px 10px rgba(255, 255, 255, 0.5);
+  /* border-radius: 50%; */
+}
+
+.btns:hover{
+
+ 	
+}
+.form{
+  width: clamp(300px, 50%, 539px);
+  
+
+}
+	
+
+

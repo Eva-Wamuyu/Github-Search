@@ -12,4 +12,7 @@ export class RepoSearchFormComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  repoFind(){
+    
+  }
 }

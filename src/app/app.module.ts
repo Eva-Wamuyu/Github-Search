@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http'
 
+
+import {AppRoutingModule} from './Components/routing-module'
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './Components/navigation/navigation.component';
 import { HeroComponent } from './Components/hero/hero.component';
@@ -18,7 +22,11 @@ import { ResultsPageComponent } from './Components/results-page/results-page.com
     ResultsPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
