@@ -1,8 +1,9 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { environment } from "src/environments/environment";
 import { Repository } from "./Repositories";
-import { User } from "./Users";
+import { User, UserInterface } from "./Users";
 
 @Injectable(
   {providedIn: 'root'}
@@ -16,15 +17,20 @@ export class RequestService{
 
 
 
-  G_URL = "https://api.github.com/users/";
-  // G_URL = "https://api.github.com/users/Eva-Wamuyu";
+  G_URL = "https://api.github.com/";
+  
+  // TEST_URL = "https://api.github.com/users/Eva-Wamuyu";
 
   constructor(private http: HttpClient){}
 
-  searchUser(userName:string):Observable<User[]>{
+  searchUser(userName:string):Observable<UserInterface[]>{
+    
+        
+    return this.http.get<UserInterface[]>(this.G_URL+'users/'+userName);
 
-    return this.http.get<User[]>(this.G_URL+userName);
-
+  }
+  getUserRepo(userName:string):Observable<Repository[]>{
+    return this.http.get<Repository[]>(this.G_URL+'users/'+userName+'/repos?order=created&sort=asc?-access_token='+environment.devKey);
   }
 
   searchRepo(repoName:string):Observable<Repository[]>{
@@ -33,8 +39,19 @@ export class RequestService{
   }
 
 
-  
 
+
+  // searchUser(userName:string){
+
+    
+  //   return this.http.get(this.G_URL+'users/'+userName);
+
+  // }
+
+  
+getMe(){
+  this.http.get(this.G_URL+"/users");
+}
 
 
 }

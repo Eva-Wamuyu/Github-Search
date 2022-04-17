@@ -9,19 +9,31 @@ import { User } from 'src/app/Classes and Services/Users';
 })
 export class UserSearchFormComponent implements OnInit {
 
-  user: User[] = []
+  user: User[] = [];
+  use = '';
+
 
   constructor(private requestSvs: RequestService) { }
 
   ngOnInit(): void {
+    
   }
 
-  userFind(form:any){
+  me:any;
 
-    this.requestSvs.searchUser(form.value).subscribe(
+  userFind(use:any){
+    
+  
+
+    this.requestSvs.searchUser('Wamuyu').subscribe(
       (data)=>{
-        this.user = data;
-        console.log(data);
+        
+        this.me = data;
+        console.log(this.me);
+
+        
+      },err =>{
+        alert("oops");
       }
     )
 

@@ -11,22 +11,22 @@ import { RequestService } from 'src/app/Classes and Services/requestService';
 export class RepoSearchFormComponent implements OnInit {
 
   repository: Repository[] = []
-  repoToFind = "Eva-Wamuyu"
+  repoToFind!: string;
 
   constructor(private requestSvs: RequestService) { }
 
   ngOnInit(): void {
   }
 
-  repoFind(form:any){
+  repoFind(repoToFind:string){
 
-    console.log(form.value)
-    console.log(this.repoToFind)
+    
+    console.log(repoToFind)
 
-    this.requestSvs.searchRepo(this.repoToFind).subscribe(
+    this.requestSvs.searchRepo(repoToFind).subscribe(
       (data)=>{
         this.repository = data;
-        console.log(data);
+        
       }
     )
 

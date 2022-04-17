@@ -1,7 +1,8 @@
 <div class="container">
   <form #userForm="ngForm" (ngSubmit)="userFind(userForm)">
-    <label class="" for="">Search Repository</label>
-    <input type="text" name="" id="" class="form-control">
-  
+    <label class="" for="">Search User</label>
+    <input type="text" [(ngModel)]="use" name="use" id="" class="form-control" required>
+  <button type="submit">Search</button>
   </form>
   </div>
+

@@ -1,9 +1,15 @@
 <div class="container-fluid center-div d-flex e-height">
   <div class="" >
-  <a class="me-2">Search A User</a>
+  <a class="ms-2"routerLink="/">Home</a>
   <a class="border"></a>
-  <a class="ms-2">Search A Repository</a>
+  <a class="me-2" routerLink="/UserLens">Search A User</a>
+  <a class="border"></a>
+  <a class="ms-2"routerLink="/RepoLens">Search A Repository</a>
   </div>
 </div>
 
-<app-repo-search-form> </app-repo-search-form>
+<router-outlet></router-outlet>
+
+<!-- <app-repo-search-form> </app-repo-search-form>
+<app-user-search-form></app-user-search-form>
+<app-results-page></app-results-page> -->

@@ -7,6 +7,7 @@ import { UserSearchFormComponent } from './user-search-form/user-search-form.com
 
 const routes: Routes = [
   {path: "", component: HeroComponent},
+  {path: "home", component: HeroComponent},
   {path: "RepoLens", component: RepoSearchFormComponent},
   {path: "UserLens", component: UserSearchFormComponent},
   {path: "*", component: OopsNotFoundComponent }

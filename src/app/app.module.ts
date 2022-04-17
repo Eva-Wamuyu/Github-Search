@@ -12,6 +12,8 @@ import { UserSearchFormComponent } from './Components/user-search-form/user-sear
 import { RepoSearchFormComponent } from './Components/repo-search-form/repo-search-form.component';
 import { ResultsPageComponent } from './Components/results-page/results-page.component';
 import { OopsNotFoundComponent } from './Components/oops-not-found/oops-not-found.component';
+import { UserRepositoriesComponent } from './Components/user-repositories/user-repositories.component';
+import { JoinSearchWordsPipePipe } from './Components/join-search-words-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { OopsNotFoundComponent } from './Components/oops-not-found/oops-not-foun
     UserSearchFormComponent,
     RepoSearchFormComponent,
     ResultsPageComponent,
-    OopsNotFoundComponent
+    OopsNotFoundComponent,
+    UserRepositoriesComponent,
+    JoinSearchWordsPipePipe
   ],
   imports: [
     BrowserModule,

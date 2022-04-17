@@ -1,7 +1,7 @@
 
 
 <div class="container">
-<form #repoForm="ngForm" (ngSubmit)="repoFind(repoForm)">
+<form #repoForm="ngForm" (ngSubmit)="repoFind(repoToFind)">
  <div class="form-group form">
   <label class="" for="repo">Search Repository</label>
   <input type="text"  name="repo"  id="repo" class="form-control" (ngModel)="repoToFind"  >
@@ -11,10 +11,10 @@
  </div>
 </form>
 </div>
-
+<!-- 
 
 <div *ngFor='let repo of repository'>
  <div>
    {{repo.forks_count}}
  </div>
-</div>
+</div> -->
