@@ -23,17 +23,5 @@ class User{
   }
 
 }
-// interface UserInterface{
-//   login: string
-//   name: string
-//   followers: number
-//   following: number
 
-//   avatar_url: string;
-//   repos_url: string;
-//   public_repos: number
-//   html_url:string
-
-// }
 export {User}
-// export {UserInterface}

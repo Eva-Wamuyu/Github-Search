@@ -1,4 +1,4 @@
-export class Repository implements RepositoryInterface{
+export class Repository{
     
     html_url!: string
     description!: string
@@ -35,19 +35,19 @@ export class Repository implements RepositoryInterface{
   
 }
 
-interface RepositoryInterface{
+// interface RepositoryInterface{
 
     
-    html_url: string,
-    description: string,
-    name: string,
-    language: string;
-    forks_count: number,
-    created_at: Date;
-    watchers_count: number,
-    default_branch: string,
+//     html_url: string,
+//     description: string,
+//     name: string,
+//     language: string;
+//     forks_count: number,
+//     created_at: Date;
+//     watchers_count: number,
+//     default_branch: string,
    
 
-}
+// }
 
 // "url": "https://api.github.com/repos/octocat/Hello-World",
