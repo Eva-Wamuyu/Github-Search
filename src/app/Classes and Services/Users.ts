@@ -1,4 +1,4 @@
-class User implements UserInterface{
+class User{
   
   login!: string
   name!: string
@@ -23,17 +23,17 @@ class User implements UserInterface{
   }
 
 }
-interface UserInterface{
-  login: string
-  name: string
-  followers: number
-  following: number
+// interface UserInterface{
+//   login: string
+//   name: string
+//   followers: number
+//   following: number
 
-  avatar_url: string;
-  repos_url: string;
-  public_repos: number
-  html_url:string
+//   avatar_url: string;
+//   repos_url: string;
+//   public_repos: number
+//   html_url:string
 
-}
+// }
 export {User}
-export {UserInterface}
+// export {UserInterface}

@@ -1,4 +1,4 @@
-import { Component, IterableDiffers, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Repository } from 'src/app/Classes and Services/Repositories';
 import { RequestService } from 'src/app/Classes and Services/requestService';
 
