@@ -10,12 +10,12 @@
   </form>
   </div>
 
-  <div class="container-fluid" *ngIf="seeDetails">
-  <div class="container-fluid" >
-    <p>
-      Search Results For: {{use}}
+ <div class="container-fluid" *ngIf="seeDetails">
+  <div class="container">
+    <p class="text-center">
+      Search Results For: {{gitUser.login}}
     </p>
-    <div>
+    <div class="text-center">
       <h2>{{gitUser.login}}</h2>
       <img src="{{gitUser.avatar_url}}" alt="{{gitUser.login}}photo" width="300px">
       <p>
@@ -34,6 +34,7 @@
     </div>
   </div>
 
+  <hr>
 <div class="container">
   <h3> Repositories </h3>
 </div>
