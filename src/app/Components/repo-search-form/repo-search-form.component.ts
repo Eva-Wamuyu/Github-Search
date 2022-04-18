@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, IterableDiffers, OnInit } from '@angular/core';
 import { Repository } from 'src/app/Classes and Services/Repositories';
 import { RequestService } from 'src/app/Classes and Services/requestService';
 
@@ -10,9 +10,9 @@ import { RequestService } from 'src/app/Classes and Services/requestService';
 })
 export class RepoSearchFormComponent implements OnInit {
 
-  repository = new Repository("","","","",0,new Date(),0,"");
+  // repository = new Repository("","","","",0,new Date(),0,"");
   seeDetails = false;
-  repositories = [];
+  repositories:Repository[] = [];
   // repos = [];
   repoToFind!: string;
 
@@ -27,12 +27,16 @@ export class RepoSearchFormComponent implements OnInit {
       return;
     }
 
-    this.seeDetails = true;
+    
     this.requestSvs.searchRepo(repoToFind).subscribe(
       (data)=>{
+        let items:any = 'items';
+       
+
+        this.repositories = data[items];
+      
+        this.seeDetails = true;
         
-        this.repositories = data;
-        console.log(data);
         
       },
       err=>{

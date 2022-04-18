@@ -12,16 +12,33 @@
 </form>
 </div>
 
-<div class="container" *ngIf="seeDetails">
-  <p>
+<div class="container mt-2 text-light" *ngIf="seeDetails">
+  <div class="row justify-content-center" >
+    <div class="col-sm-12 col-md-3 m-1"*ngFor='let repo  of repositories'>
+      <p>
     Search Results For: {{repoToFind}}
-  </p>
-  
+    </p>
+
+    <div >
+     <p>
+      Repository Name:  {{repo.name}}
+      </p>
+    <p>
+      Description   {{repo.description|truncate}}
+    </p>
+     <p>
+       Language  {{repo.language}}
+      </p>
+      <p>
+       Branch: {{repo.default_branch}}
+      </p>
+     <p>
+        Forks:  {{repo.forks_count}} <br>
+        Created: {{repo.created_at|date}}
+        <br>
+         <a class="btn" target="_blank" href="{{repo.html_url}}">Go to github</a>
+      </p>
+    </div>
+   </div> 
 </div>
-
-
-<div *ngFor='let repo   repository'>
-  <p>
-   {{repo.description}}
- </p>
 </div>

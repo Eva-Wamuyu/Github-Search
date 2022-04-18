@@ -19,7 +19,7 @@ export class RequestService{
 
   key = environment.devKey;
 
-  G_URL = "https://api.github.com/users";
+  G_URL = "https://api.github.com/";
   gitUser = new User("","",0,0,"","",0,"");
   
   // TEST_URL = "https://api.github.com/users/Eva-Wamuyu";
@@ -29,25 +29,20 @@ export class RequestService{
   searchUser(userName:string):Observable<any>{
     
         
-    return this.http.get<User>(this.G_URL+'/'+userName);
+    return this.http.get<User>(this.G_URL+'users/'+userName)
 
   }
   getUserRepo(userName:string):Observable<any>{
 
-    return this.http
-    .get<HttpClient>(
-     this.G_URL +
-        '/' +
-        userName +
-        '/repos?sort=created&direction=asc?access_token=' +
-        environment.devKey
+    return this.http.get<HttpClient>(this.G_URL + 'users/'+ userName + '/repos?sort=created&direction=asc?access_token=' + environment.devKey
     )
     // return this.http.get<Repository>(this.G_URL+'users/'+userName);
   }
 
   searchRepo(repoName:string):Observable<any>{
 
-    return this.http.get<Repository>(this.G_URL+"search/repositories?"+repoName);
+    
+    return this.http.get<Repository>(this.G_URL+"search/repositories?q="+repoName);
   }
 
   
