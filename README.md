@@ -1,27 +1,65 @@
 # GithubSearch
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+## By Eva Wamuyu 18-04-22
 
-## Development server
+## Table of Content
+
+
++ [Description](#Description)
++ [Live Link](#Live-Link)
++ [Installation](#Installation)
++ [Technologies](#Technologies)
++ [Dependencies](#Dependencies)
++ [Development](#Development)
++ [Contact-Info](#Contact-Info)
++ [License](#License)
+
+## Description
+
+This is a Github Search Web page that makes use of the github Api.
+One can search for a user using their username and for repositories.
+The landing page is a summary of my github account.
+
+## Live-Link
+Click on this link to access the live site.
+https://eva-wamuyu.github.io/Github-Search/
+## Installation
+
+* One can clone the repository to have it in their local storage.
+git clone https://github.com/Eva-Wamuyu/Github-Search
+
+* Or One can fork the repository and have it in their remote storage.
+
+## Technologies and Languages
+
+* Angular
+* Typescript
+* Javascript
+* Bootstrap + CSS
+* HTML
+## Dependencies
+
+* Github API
+## Development
+### Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
+### Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+### Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Contact-Info
 
-## Further help
+* Email: rutheve.eva@gmail.com
+* Twitter: [@Ruth_Eva](https://twitter.com/Ruth_Eva_?t=_DEEkzJ3K0Qzr1npwZ7ggw&s=09)
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## License
+This project comes with an MIT license.
+You can view it [here](license)
