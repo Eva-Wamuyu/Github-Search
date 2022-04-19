@@ -16,9 +16,7 @@
   <h2>Repositories</h2>
   <div class="row justify-content-center" >
     <div class="col-sm-12 col-md-3 m-1 px-2"*ngFor='let repo  of repositories'>
-      <p>
-    Search Results For: {{repoToFind}}
-    </p>
+    
 
     
      <p>
@@ -37,7 +35,7 @@
         Forks:  {{repo.forks_count}} <br>
         Created: {{repo.created_at|date}}
         <br>
-         <a class="btn" target="_blank" href="{{repo.html_url}}">Go to github</a>
+         <a class=" btn" id="btn" target="_blank" href="{{repo.html_url}}">Go to github</a>
       </p>
    
    </div> 

@@ -15,64 +15,43 @@ import { User } from "./Users";
 
 export class RequestService{
 
-
-
-  key = environment.devKey;
-
-  G_URL = "https://api.github.com/";
-  gitUser = new User("","",0,0,"","",0,"");
   
-  // TEST_URL = "https://api.github.com/users/Eva-Wamuyu";
+
+
+
+  
+  key = environment.devKey;
+  user = 'Eva-Wamuyu';
+
+  AuthenticatedURL = `https://${this.user}:${this.key}@api.github.com/`
+  gitUser = new User("","",0,0,"","",0,"");
+
 
   constructor(private http: HttpClient){}
 
   searchUser(userName:string):Observable<any>{
     
         
-    return this.http.get<User>(this.G_URL+'users/'+userName)
+    return this.http.get<User>(this.AuthenticatedURL+'users/'+userName)
 
   }
   getUserRepo(userName:string):Observable<any>{
 
-    return this.http.get<HttpClient>(this.G_URL + 'users/'+ userName + '/repos?sort=created&direction=asc?access_token=' + environment.devKey
+    return this.http.get<Repository>(this.AuthenticatedURL + 'users/'+ userName + '/repos?sort=created&direction=asc?access_token=' + this.key
     )
-    // return this.http.get<Repository>(this.G_URL+'users/'+userName);
+
   }
 
   searchRepo(repoName:string):Observable<any>{
 
     
-    return this.http.get<Repository>(this.G_URL+"search/repositories?q="+repoName);
+    return this.http.get<Repository>(this.AuthenticatedURL+"search/repositories?q="+repoName);
   }
 
   
 
 
 
-  // searchPerson(user:any){
-  //   this.http.get<User>(this.G_URL+"users/"+user).subscribe(
-  //     (data:any) =>{
-  //       this.gitUser = new User(data.login, data.name, data.followers, data.following, data.avatar_url, data.repos_url, data.public_repos, data.html_url);
-  //       console.log(data);
-  //     }
-  //   );
-  // }
-
-
-  // 
-  // searchUser(userName:string){
-
-    
-  //   return this.http.get(this.G_URL+'users/'+userName);
-
-  // }
-
-  // +'repos/-access_token='+environment.devKey
-
-  
-// getMe(){
-//   this.http.get(this.G_URL+"/users");
-// }
 
 
 }
